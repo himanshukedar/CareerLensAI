@@ -1,0 +1,170 @@
+.jobs-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.job-manage-card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg) !important;
+}
+
+.job-title {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.job-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.job-desc-short {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.card-footer-manage {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.applicants-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.job-modal {
+    width: 100%;
+    max-width: 550px;
+    padding: 40px;
+    border: 1px solid var(--primary);
+    background: var(--bg-card) !important;
+}
+
+.modal-head h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.job-form input,
+.job-form textarea {
+    background: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
+    padding: 15px;
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.job-form input:focus,
+.job-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 120px 0;
+    color: var(--text-muted);
+}
+
+/* ── Start Interview Button ── */
+.start-interview-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.12), rgba(99, 102, 241, 0.12));
+    border: 1px solid rgba(0, 243, 255, 0.35);
+    color: #00f3ff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.start-interview-btn:hover:not(:disabled) {
+    background: rgba(0, 243, 255, 0.22);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.start-interview-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-spinner {
+    animation: btn-spin 1s linear infinite;
+}
+
+@keyframes btn-spin {
+    100% { transform: rotate(360deg); }
+}
+
+.outline-btn-sm {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.outline-btn-sm:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}

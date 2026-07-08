@@ -1,0 +1,210 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Space for the fixed header */
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 1000;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.ai-highlight {
+    color: var(--matrix);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.15s ease; /* Instant < 150ms hover */
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    background: var(--primary-glow);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    background: var(--primary-glow);
+    font-weight: 700;
+}
+
+/* Light theme — sage-tinted header */
+.light-theme .main-header {
+    background: rgba(230, 237, 233, 0.82);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.user-name-display {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--primary);
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-name-display:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--primary);
+    transform: rotate(15deg);
+}
+
+/* Nudge Banner */
+.nudge-banner {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(0,243,255,0.1) 0%, rgba(188,19,254,0.1) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 999;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    animation: slideDown 0.5s ease-out;
+}
+
+.nudge-icon {
+    color: var(--matrix);
+}
+
+.nudge-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--accent);
+    transition: all 0.2s ease;
+}
+
+.nudge-link:hover {
+    color: var(--text-main);
+    border-bottom-color: var(--text-main);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-header {
+        padding: 0 1rem;
+    }
+    .header-nav {
+        gap: 0.8rem;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        display: none; /* simple mobile hide for now, would need a hamburger menu */
+    }
+    .main-header {
+        padding: 0 1rem;
+    }
+    .nudge-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.8rem;
+    }
+}

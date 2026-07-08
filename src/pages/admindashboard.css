@@ -1,0 +1,243 @@
+.admin-dashboard {
+    min-height: 100vh;
+    background: transparent;
+    color: var(--text-main);
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.admin-title {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.admin-tab {
+    padding: 12px 24px;
+    background: var(--glass-highlight);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-tab.active {
+    background: var(--primary-glow);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+    font-weight: bold;
+}
+
+.admin-tab:hover:not(.active) {
+    border-color: var(--text-muted);
+    color: var(--text-main);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: block;
+    color: var(--text-main);
+}
+
+.stat-label {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.data-table-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 16px;
+    background: var(--glass-highlight);
+    border-bottom: 1px solid var(--glass-border);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.admin-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.ranking-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.ranking-high { background: rgba(0, 255, 127, 0.15); color: #00b359; border: 1px solid rgba(0, 255, 127, 0.3); }
+.ranking-mid { background: rgba(255, 215, 0, 0.15); color: #ccac00; border: 1px solid rgba(255, 215, 0, 0.3); }
+.ranking-low { background: rgba(255, 68, 68, 0.15); color: #cc0000; border: 1px solid rgba(255, 68, 68, 0.3); }
+
+/* In dark mode we want bright text for the badges */
+body:not(.light-theme) .ranking-high { color: #00ff7f; }
+body:not(.light-theme) .ranking-mid { color: #ffd700; }
+body:not(.light-theme) .ranking-low { color: #ff4444; }
+
+.training-agent-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: var(--glass-highlight);
+    border-radius: 3px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.glow-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.glow-btn:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.glow-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.input-futuristic {
+    background: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-futuristic::placeholder {
+    color: var(--text-muted);
+}
+
+.input-futuristic:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.admin-modal {
+    background: var(--bg-card);
+    border: 1px solid var(--primary);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 50px var(--primary-glow);
+}
+
+/* Scrollbar overrides for admin */
+.admin-dashboard ::-webkit-scrollbar-track {
+    background: transparent;
+}
+.admin-dashboard ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}

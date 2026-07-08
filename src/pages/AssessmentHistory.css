@@ -1,0 +1,189 @@
+.assessment-history-page {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.history-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.history-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px var(--primary-glow);
+    transform: translateY(-5px);
+}
+
+.history-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-type {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.skill-eval-type {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--secondary);
+}
+
+.history-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.history-title {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+.history-score-display {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.score-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.score-box p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.score-box h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.no-history {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--text-muted);
+}
+
+/* Modal details */
+.report-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.report-modal {
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.2);
+}
+
+.report-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+
+.report-modal-close {
+    background: none; border: none; color: var(--text-muted); cursor: pointer;
+}
+.report-modal-close:hover { color: var(--accent); }
+
+.report-feedback-section {
+    margin-bottom: 2rem;
+}
+
+.report-feedback-section h4 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.feedback-lists {
+    display: flex;
+    gap: 1rem;
+}
+.feedback-box {
+    flex: 1;
+    background: rgba(255,255,255,0.02);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+.feedback-box h5 {
+    margin: 0 0 1rem 0;
+    color: var(--matrix);
+}
+.feedback-box.negative h5 {
+    color: var(--accent);
+}
+
+.feedback-box ul {
+    margin: 0; padding-left: 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.feedback-box li {
+    margin-bottom: 0.5rem;
+}
+
+.next-steps-banner {
+    background: rgba(0, 243, 255, 0.1);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.next-steps-banner h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+}
+.next-steps-banner p {margin: 0; color: var(--text-muted);}

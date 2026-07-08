@@ -1,0 +1,152 @@
+.recruiter-sidebar {
+    width: 280px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 25px;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid var(--glass-border);
+    background: var(--bg-card) !important;
+    z-index: 100;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-branding {
+    margin-bottom: 60px;
+    padding-left: 15px;
+    border-left: 4px solid var(--primary);
+}
+
+.branding-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-main);
+    display: block;
+    letter-spacing: -1px;
+}
+
+.branding-sub {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.sidebar-link:hover {
+    background: var(--glass-highlight);
+    color: var(--text-main);
+}
+
+.sidebar-link.active {
+    background: var(--primary-glow);
+    color: var(--primary);
+}
+
+.sidebar-control {
+    margin-bottom: 20px;
+}
+
+.theme-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-highlight);
+    color: var(--text-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--primary-glow);
+    border-color: var(--primary);
+}
+
+.sidebar-footer {
+    margin-top: 20px;
+    padding-top: 25px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: var(--primary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    border: 1px solid var(--glass-border);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.user-role {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.logout-btn-sidebar {
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logout-btn-sidebar:hover {
+    background: #ff4444;
+    color: #fff;
+}
