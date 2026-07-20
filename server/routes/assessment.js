@@ -6,7 +6,7 @@ const RoadmapProgress = require('../models/RoadmapProgress');
 const Token = require('../models/Token');
 const axios = require('axios');
 
-const AI_ENGINE_URL = 'http://localhost:8000';
+const AI_ENGINE_URL = process.env.AI_ENGINE_URL || 'http://localhost:8001';
 
 // @route   POST api/assessment/submit
 router.post('/submit', auth, async (req, res) => {

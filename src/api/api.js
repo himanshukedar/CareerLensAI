@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Hosting-ready: reads from .env (VITE_ prefix required by Vite)
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api');
 export const AI_ENGINE_URL = import.meta.env.VITE_AI_ENGINE_URL || 'http://localhost:8001';
 
 const api = axios.create({

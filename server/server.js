@@ -8,6 +8,7 @@ const compression = require('compression');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const { v4: uuidv4 } = require('uuid');
+const path = require('path');
 
 const rateLimit = require('express-rate-limit');
 const errorMiddleware = require('./middleware/error');
@@ -158,9 +159,21 @@ app.get('/api/videocall/ice-servers', async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.send('CareerLens AI API is running secure...');
-});
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../dist')));
+    
+    app.get('*', (req, res, next) => {
+        if (req.path.startsWith('/api')) {
+            return next();
+        }
+        res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
+    });
+} else {
+    app.get('/', (req, res) => {
+        res.send('CareerLens AI API is running secure...');
+    });
+}
 
 // Error Handler
 app.use(errorMiddleware);
